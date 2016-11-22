@@ -4,6 +4,7 @@ import canonizeAnyColor from "./canonizeAnyColor";
 
 const appExpress = express();
 const openPort = 3000;
+appExpress.use(cors());
 
 appExpress.get("/task2d", (req, res) => {
 	res.send(canonizeAnyColor(req.query.color || req.query.colour));
